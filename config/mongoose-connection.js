@@ -1,9 +1,10 @@
 const mongoose=require('mongoose')
+const debg=require('debug')('development:mongoose');
 
-mongoose.connect('mongodb://localhost:27017/fashino').then(()=>{
-    console.log('Data Base connected');
+mongoose.connect(`${process.env.DB_URL}`).then(()=>{
+    debg('Data Base connected');
 }).catch((err)=>{
-    console.log(err);
+    debg(err);
 })
 
-module.exports=mongoose.connect;
+module.exports=mongoose.connection;

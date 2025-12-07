@@ -15,7 +15,6 @@ const userSchema=mongoose.Schema({
     address_2:String,
     city:String,
     pin_code:Number,
-    is_admin:Boolean,
     cart:{
         type:Array,
         default:[]
